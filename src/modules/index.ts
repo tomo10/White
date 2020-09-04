@@ -1,3 +1,4 @@
-import Foo from './Foo';
+import Header from './ui/Header';
+import Body from './ui/Body';
 
-export default [Foo];
+export default [Header, Body];

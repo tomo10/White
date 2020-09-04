@@ -16,9 +16,8 @@ export default () => {
         console.log(e)
       }
     }
+    bootstrapAsync();
   }, []);
-
-
 
   return (
     <NavigationContainer>

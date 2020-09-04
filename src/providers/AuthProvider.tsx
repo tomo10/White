@@ -1,7 +1,6 @@
 import React from 'react';
 import SInfo from 'react-native-sensitive-info';
 
-
 type User = null | { email: string; password: string; };
 interface AuthProviderProps {}
 
@@ -14,7 +13,6 @@ export const AuthContext = React.createContext<{
     login: () => {},
     logout: () => {}
 });
-
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
     const [user, setUser] = React.useState<User>();
