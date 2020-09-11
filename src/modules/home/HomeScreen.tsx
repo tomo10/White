@@ -1,25 +1,16 @@
 import React, { useContext } from 'react';
-import { View, Text, SafeAreaView, TouchableHighlight } from 'react-native';
-import { AuthContext } from '../../providers/AuthProvider';
-import modules from '..';
+import { Text, SafeAreaView } from 'react-native';
+import { LogoutButton } from './components';
+import { AppStackParamList } from '../../navigation/AppStackParamList';
 
 const styles = require('./../../themes')('App');
 
-export default ({ navigation }) => {
-  const { logout } = useContext(AuthContext);
+export default ({ navigation }: AppStackParamList) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableHighlight onPress={() => logout()}>
-        <Text>LOGOUT</Text>
-      </TouchableHighlight>
-      <View>
-        {
-          modules.map(({name, Component}) => (
-            <Component key={name} />
-          ))
-        }
-      </View>
+      <LogoutButton />
+      <Text>Landing Page</Text>
     </SafeAreaView>
   )
 }

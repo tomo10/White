@@ -1,4 +1,3 @@
-import Header from './ui/Header';
-import Body from './ui/Body';
+import { default as Home } from './home';
 
-export default [Header, Body];
+export default [Home];

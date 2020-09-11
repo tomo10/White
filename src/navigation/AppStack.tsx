@@ -1,14 +1,21 @@
 import * as React from 'react';
-import { HomeScreen } from '../modules/home';
 import { createStackNavigator } from '@react-navigation/stack';
+import { AppStackParamList } from './AppStackParamList';
+import modules from './../modules';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<AppStackParamList>();
 
 export default () => {
-
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      {
+        modules.map(({ navigation }) => (
+          <Stack.Screen 
+            name={navigation.name} 
+            component={navigation.component} 
+          />
+        ))
+      }
     </Stack.Navigator>
   )
 }
